@@ -1,0 +1,41 @@
+{
+    'name': 'Gestion hôtel',
+    'version': '1.0',
+    'summary': 'Module de gestion d\'hôtel',
+    'sequence': -100,
+    'description': """Gestion complète des hôtels, incluant les bâtiments, chambres, commodités, clients, réservations, paiements, facturation, espaces, personnel et plannings.""",
+    'category': 'Management',
+    'author': 'Ane Henri Joel',
+    'website': 'http://www.votresite.com',
+    'depends': ['base', 'website'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/hotel_building_view.xml',
+        'views/menu.xml',
+        'views/hotel_room_view.xml',
+        'views/hotel_amenity_view.xml',
+        'views/hotel_client_view.xml',
+        'views/hotel_reservation_view.xml',
+        'views/hotel_payment_view.xml',
+        'views/hotel_billing_view.xml',
+        'views/hotel_space_view.xml',
+        'views/hotel_staff_view.xml',
+        'views/hotel_schedule_view.xml',
+        'views/templates.xml',
+        'views/website_reservation_template.xml',
+    ],
+    'controllers': [
+        'controllers/website_reservation.py',
+    ],
+    'demo': [],
+    'web'
+    'installable': True,
+    'application': True,
+    'auto_install': False,
+    'assets': {
+        'web.assets_backend': [
+            'hotel_management/static/src/img/my_image.png',
+            'hotel_management/static/src/img/my_image1.png',
+        ],
+    },
+}

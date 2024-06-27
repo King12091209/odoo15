@@ -1,0 +1,6 @@
+<odoo>
+    <menuitem id="menu_hotel_management" name="Hotel Management" web_icon="hotel_management,static/description/icon.png"/>
+
+    <menuitem id="menu_hotel_building" name="Buildings" parent="menu_hotel_management" action="action_hotel_building"/>
+</odoo>
+

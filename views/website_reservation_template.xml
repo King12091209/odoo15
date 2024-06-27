@@ -1,0 +1,32 @@
+<odoo>
+    <template id="hotel_reservation_template" name="Hotel Reservation">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Hotel Reservation</h1>
+                <form action="/hotel/reservation/submit" method="post">
+                    <div class="form-group">
+                        <label for="customer_id">Customer</label>
+                        <input type="text" name="customer_id" id="customer_id" required="required" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="room_id">Room</label>
+                        <select name="room_id" id="room_id" required="required" class="form-control">
+                            <t t-foreach="rooms" t-as="room">
+                                <option t-att-value="room.id" t-esc="room.name"/>
+                            </t>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="check_in">Check In</label>
+                        <input type="datetime-local" name="check_in" id="check_in" required="required" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="check_out">Check Out</label>
+                        <input type="datetime-local" name="check_out" id="check_out" required="required" class="form-control"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </t>
+    </template>
+</odoo>

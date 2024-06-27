@@ -1,0 +1,37 @@
+<odoo>
+    <record id="view_hotel_schedule_tree" model="ir.ui.view">
+        <field name="name">hotel.schedule.tree</field>
+        <field name="model">hotel.schedule</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="staff_id"/>
+                <field name="shift_start"/>
+                <field name="shift_end"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hotel_schedule_form" model="ir.ui.view">
+        <field name="name">hotel.schedule.form</field>
+        <field name="model">hotel.schedule</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="staff_id"/>
+                    <field name="shift_start"/>
+                    <field name="shift_end"/>
+                    <field name="status"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hotel_schedule" model="ir.actions.act_window">
+        <field name="name">Hotel Schedules</field>
+        <field name="res_model">hotel.schedule</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_hotel_schedule" name="Schedules" parent="menu_hotel_management" action="action_hotel_schedule"/>
+</odoo>

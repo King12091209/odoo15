@@ -1,0 +1,43 @@
+<odoo>
+    <record id="view_hotel_client_tree" model="ir.ui.view">
+        <field name="name">hotel.client.tree</field>
+        <field name="model">hotel.client</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="check_in_date"/>
+                <field name="check_out_date"/>
+                <field name="stay_duration"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_hotel_client_form" model="ir.ui.view">
+        <field name="name">hotel.client.form</field>
+        <field name="model">hotel.client</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                </group>
+                <group>
+                    <field name="check_in_date"/>
+                    <field name="check_out_date"/>
+                    <field name="stay_duration"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hotel_client" model="ir.actions.act_window">
+        <field name="name">Hotel Clients</field>
+        <field name="res_model">hotel.client</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_hotel_client" name="Clients" parent="menu_hotel_management" action="action_hotel_client"/>
+</odoo>
